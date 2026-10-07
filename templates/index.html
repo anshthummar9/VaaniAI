@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VaaniAI is a multilingual conversational AI for Indian languages.">
+    <title>VaaniAI | Multilingual Conversational AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="app-shell">
+        <header class="topbar">
+            <a class="brand" href="#home" data-nav="home" aria-label="VaaniAI home">
+                <img class="logo-image brand-logo" src="{{ url_for('static', filename='images/vaani-logo.png') }}"
+                    alt="VaaniAI logo">
+                <span>
+                    <strong>VaaniAI</strong>
+                    <small>India's language companion</small>
+                </span>
+            </a>
+            <nav class="topnav" aria-label="Primary navigation">
+                <a href="#home" data-nav="home" class="active">Home</a>
+                <a href="#chat" data-nav="chat">Chat</a>
+                <a href="#features" data-nav="features">NLP Features</a>
+                <a href="#about" data-nav="about">About</a>
+            </nav>
+            <div class="topbar-actions">
+                <span class="status-pill"><i></i> Gemini connected</span>
+                <button class="icon-button mobile-menu-button" id="mobile-menu-btn"
+                    aria-label="Open navigation">☰</button>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero section-anchor" id="home">
+                <div class="hero-copy">
+                    <span class="eyebrow"><span class="eyebrow-dot"></span> Built for India's voices</span>
+                    <h1>Every language has a story.<br><span>VaaniAI listens.</span></h1>
+                    <p>Have natural conversations with an AI assistant that understands and responds in the language you
+                        choose.</p>
+                    <div class="hero-actions">
+                        <button class="primary-button" data-scroll-chat>Start a conversation <span>→</span></button>
+                        <a class="text-button" href="#features">Explore the project <span>↗</span></a>
+                    </div>
+                    <div class="hero-stats">
+                        <div><strong>09</strong><span>Indian languages</span></div>
+                        <div><strong>01</strong><span>Intelligent assistant</span></div>
+                        <div><strong>∞</strong><span>Ideas to explore</span></div>
+                    </div>
+                </div>
+                <div class="hero-visual" aria-label="VaaniAI multilingual preview">
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+                    <div class="hero-card">
+                        <div class="preview-top"><span class="mini-brand"><img class="logo-image preview-logo"
+                                    src="{{ url_for('static', filename='images/vaani-logo.png') }}" alt="">
+                                VaaniAI</span><span class="live-label"><i></i> Live</span></div>
+                        <div class="preview-welcome"><span class="bot-avatar">✦</span>
+                            <div><small>VaaniAI · Just now</small>
+                                <p>નમસ્તે! હું વાણી છું.<br>How can I help you today?</p>
+                            </div>
+                        </div>
+                        <div class="preview-message">Tell me about India's languages.</div>
+                        <div class="preview-response"><span class="bot-avatar small">✦</span>
+                            <div><small>VaaniAI is thinking...</small>
+                                <div class="typing-dots"><i></i><i></i><i></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="language-float float-top">नमस्ते <span>Hindi</span></div>
+                    <div class="language-float float-bottom">வணக்கம் <span>Tamil</span></div>
+                </div>
+            </section>
+
+            <section class="workspace section-anchor" id="chat">
+                <div class="section-heading">
+                    <div><span class="eyebrow">WORKSPACE</span>
+                        <h2>Your intelligent workspace</h2>
+                    </div>
+                    <p>Choose a language, ask anything, and let VaaniAI help you think, learn and create.</p>
+                </div>
+                <div class="dashboard">
+                    <aside class="sidebar" id="sidebar">
+                        <div class="sidebar-label">Workspace</div>
+                        <button class="side-link active" id="new-chat-btn"><span class="side-icon">＋</span> New chat
+                            <kbd>⌘ K</kbd></button>
+                        <button class="side-link" id="history-btn"><span class="side-icon">▣</span> Chat
+                            history</button>
+                        <div class="sidebar-label language-label">Languages</div>
+                        <div class="language-list">
+                            <button class="language-item selected" data-language="English"><span
+                                    class="language-dot dot-blue"></span>English <span>EN</span></button>
+                            <button class="language-item" data-language="Hindi"><span
+                                    class="language-dot dot-orange"></span>हिन्दी <span>HI</span></button>
+                            <button class="language-item" data-language="Gujarati"><span
+                                    class="language-dot dot-purple"></span>ગુજરાતી <span>GU</span></button>
+                            <button class="language-item" data-language="Marathi"><span
+                                    class="language-dot dot-pink"></span>मराठी <span>MR</span></button>
+                            <button class="language-item" data-language="Bengali"><span
+                                    class="language-dot dot-green"></span>বাংলা <span>BN</span></button>
+                            <button class="language-item" data-language="Tamil"><span
+                                    class="language-dot dot-red"></span>தமிழ் <span>TA</span></button>
+                            <button class="language-item" data-language="Telugu"><span
+                                    class="language-dot dot-cyan"></span>తెలుగు <span>TE</span></button>
+                            <button class="language-item" data-language="Kannada"><span
+                                    class="language-dot dot-yellow"></span>ಕನ್ನಡ <span>KN</span></button>
+                            <button class="language-item" data-language="Malayalam"><span
+                                    class="language-dot dot-indigo"></span>മലയാളം <span>ML</span></button>
+                        </div>
+                        <div class="sidebar-bottom">
+                            <button class="side-link" id="settings-btn"><span class="side-icon">⚙</span>
+                                Settings</button>
+                            <div class="student-card"><span class="student-avatar">AI</span>
+                                <div><strong>VaaniAI Project</strong><small>NLP college project</small></div>
+                                <span>•••</span>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <section class="chat-panel">
+                        <div class="chat-header">
+                            <div><span class="online-dot"></span>
+                                <div>
+                                    <h3>VaaniAI Assistant</h3>
+                                    <p>Multilingual conversational intelligence</p>
+                                </div>
+                            </div>
+                            <div class="chat-header-actions"><span class="language-chip"
+                                    id="selected-language-chip">English <b>EN</b></span><button class="icon-button"
+                                    id="clear-btn" title="Clear chat">⌫</button></div>
+                        </div>
+                        <div class="chat-box" id="chat-box">
+                            <div class="chat-intro" id="welcome-msg">
+                                <span class="intro-icon">✦</span>
+                                <h3>What would you like to explore?</h3>
+                                <p>Ask VaaniAI anything in your chosen language. Your response will be generated by
+                                    Gemini.</p>
+                                <div class="suggestion-grid">
+                                    <button class="suggestion"
+                                        data-prompt="Explain natural language processing simply">Explain NLP simply
+                                        <span>→</span></button>
+                                    <button class="suggestion" data-prompt="Tell me an interesting fact about India">An
+                                        interesting fact about India <span>→</span></button>
+                                    <button class="suggestion" data-prompt="Help me prepare for my college viva">Help me
+                                        prepare for my viva <span>→</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="composer-wrap">
+                            <div class="composer">
+                                <textarea id="user-input" rows="1" placeholder="Message VaaniAI..."
+                                    aria-label="Message VaaniAI"></textarea>
+                                <button class="send-button" id="send-btn" aria-label="Send message">↑</button>
+                            </div>
+                            <div class="composer-meta"><span><kbd>Enter</kbd> to send · <kbd>Shift + Enter</kbd> for a
+                                    new line</span><span>Powered by Gemini</span></div>
+                        </div>
+                        <div id="loading" class="loading-state d-none"><span class="loading-spinner"></span> VaaniAI is
+                            thinking...</div>
+                    </section>
+
+                    <aside class="insight-panel">
+                        <div class="insight-heading"><span class="panel-icon">◈</span>
+                            <div><span class="eyebrow">CONTEXT PANEL</span>
+                                <h3>Conversation context</h3>
+                            </div>
+                        </div>
+                        <div class="selected-language-card">
+                            <div class="context-label">Selected language</div><strong
+                                id="selected-language-name">English</strong>
+                            <p id="selected-language-copy">Responses are generated in English.</p>
+                            <div class="language-progress"><span></span></div><small>Language preference active</small>
+                        </div>
+                        <div class="insight-block">
+                            <div class="context-label">NLP pipeline</div>
+                            <div class="pipeline-step done"><span>01</span>
+                                <div><strong>Input processing</strong><small>Message received</small></div><i>✓</i>
+                            </div>
+                            <div class="pipeline-line"></div>
+                            <div class="pipeline-step"><span>02</span>
+                                <div><strong>Language context</strong><small>Manual selection</small></div><i>•</i>
+                            </div>
+                            <div class="pipeline-line"></div>
+                            <div class="pipeline-step"><span>03</span>
+                                <div><strong>Response generation</strong><small>Gemini AI model</small></div><i>•</i>
+                            </div>
+                        </div>
+                        <div class="quick-tip"><span>✦</span>
+                            <div><strong>Tip</strong>
+                                <p>Choose the language you feel most comfortable expressing yourself in.</p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="content-section section-anchor" id="features">
+                <div class="section-heading centered">
+                    <div><span class="eyebrow">WHAT POWERS VAANIAI</span>
+                        <h2>Designed as a learning experience</h2>
+                    </div>
+                    <p>Every interaction demonstrates a practical NLP concept in a simple, explainable way.</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card"><span class="feature-number">01</span>
+                        <div class="feature-icon blue">Aa</div>
+                        <h3>Multilingual understanding</h3>
+                        <p>Work with nine Indian languages through a focused language selection layer.</p><a
+                            href="#chat" data-scroll-chat>Try it <span>→</span></a>
+                    </article>
+                    <article class="feature-card"><span class="feature-number">02</span>
+                        <div class="feature-icon purple">⌁</div>
+                        <h3>Context-aware prompts</h3>
+                        <p>Prompt engineering guides Gemini to reply naturally in the selected language.</p><a
+                            href="#chat" data-scroll-chat>Start chatting <span>→</span></a>
+                    </article>
+                    <article class="feature-card"><span class="feature-number">03</span>
+                        <div class="feature-icon teal">✦</div>
+                        <h3>Generative responses</h3>
+                        <p>Real-time responses from Google's Gemini API, never hardcoded or simulated.</p><a
+                            href="#chat" data-scroll-chat>Ask VaaniAI <span>→</span></a>
+                    </article>
+                </div>
+            </section>
+
+            <section class="languages-section section-anchor" id="languages">
+                <div class="languages-copy"><span class="eyebrow">ONE PLATFORM, MANY VOICES</span>
+                    <h2>Speak in the language that feels like home.</h2>
+                    <p>VaaniAI celebrates the diversity of Indian expression. Change your language at any time from the
+                        workspace.</p><button class="outline-button" data-scroll-chat>Explore languages
+                        <span>→</span></button>
+                </div>
+                <div class="language-showcase">
+                    <span>नमस्ते</span><span>નમસ્તે</span><span>নমস্কার</span><span>வணக்கம்</span><span>నమస్కారం</span><span>ನಮಸ್ಕಾರ</span><span>നമസ്കാരം</span><span>नमस्कार</span><span>Hello</span>
+                </div>
+            </section>
+
+            <section class="about-section section-anchor" id="about">
+                <div class="about-card"><img class="logo-image about-logo"
+                        src="{{ url_for('static', filename='images/vaani-logo.png') }}" alt="VaaniAI logo">
+                    <div><span class="eyebrow">ABOUT THE PROJECT</span>
+                        <h2>Technology with a human voice.</h2>
+                        <p>VaaniAI combines multilingual language processing, prompt engineering, and generative AI to
+                            create a seamless conversational experience across diverse Indian languages.</p>
+                        <div class="about-tags"><span>Python + Flask</span><span>Google Gemini</span><span>Vanilla
+                                JavaScript</span></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-brand"><img class="logo-image footer-logo"
+                    src="{{ url_for('static', filename='images/vaani-logo.png') }}"
+                    alt="VaaniAI logo"><strong>VaaniAI</strong></div>
+            <p>Multilingual Conversational AI for Indian Languages</p><span>Built for learning · 2026</span>
+        </footer>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
